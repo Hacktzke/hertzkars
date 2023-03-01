@@ -58,7 +58,7 @@ const Navbar = () => {
                 !isLoggedIn ? (isDark ? 'text-light' : 'text-dark') : ''
               }`}
             >
-              Hertzzzkars
+              Hertzkars
             </NavLink>
             <ion-icon
               style={{
