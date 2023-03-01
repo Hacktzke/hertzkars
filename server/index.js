@@ -45,6 +45,8 @@ app.use(
     contentSecurityPolicy: false,
   })
 );
+// TEST
+
 // Serve static files from the React app
 if (process.env.NODE_ENV !== 'development') {
   app.use(express.static(path.join(__dirname, '/public')));
