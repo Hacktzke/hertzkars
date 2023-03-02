@@ -392,7 +392,7 @@ const EditVehicleForm = () => {
           </div>
           <div className="mb-3">
             <input
-              className={`btn btn-success w-75
+              className={`btn btn-outline-primary w-75
                   ${
                     formikProps.errors.vehicleImg &&
                     formikProps.touched.vehicleImg
@@ -462,7 +462,7 @@ const EditVehicleForm = () => {
           <div>
             <Link
               to={`/vehicles/${vehicle._id}`}
-              className="btn mb-3 btn-secondary"
+              className="btn mb-3 btn-outline-secondary"
               style={{ width: '100px' }}
             >
               Cancel
@@ -473,7 +473,7 @@ const EditVehicleForm = () => {
             disabled={formikProps.isSubmitting}
             type="submit"
             className={`btn mb-3 ${
-              formikProps.isSubmitting ? 'btn-success' : 'btn-primary'
+              formikProps.isSubmitting ? 'btn-success' : 'btn-outline-success'
             }`}
             style={{ minWidth: '100px' }}
           >
@@ -481,7 +481,7 @@ const EditVehicleForm = () => {
           </button>
           <div>
             <Link
-              className="btn  btn-danger"
+              className="btn  btn-outline-danger"
               style={{ minWidth: '100px' }}
               onClick={() => {
                 setIsDeletePopup(true);

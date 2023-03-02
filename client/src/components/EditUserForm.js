@@ -379,7 +379,7 @@ const EditUserForm = () => {
           <div>
             <Link
               to={`/users/${user._id}`}
-              className="btn btn-secondary mb-3 my-auto"
+              className="btn btn-outline-secondary mb-3 my-auto"
               style={{ width: '100px' }}
             >
               Cancel
@@ -391,7 +391,7 @@ const EditUserForm = () => {
               disabled={formikProps.isSubmitting}
               type="submit"
               className={`btn mb-3 ${
-                formikProps.isSubmitting ? 'btn-success' : 'btn-primary'
+                formikProps.isSubmitting ? 'btn-success' : 'btn-outline-success'
               }`}
               style={{ minWidth: '100px' }}
             >
@@ -400,7 +400,7 @@ const EditUserForm = () => {
           </div>
           <div>
             <Link
-              className="btn btn-danger"
+              className="btn btn-outline-danger"
               style={{ minWidth: '100px' }}
               onClick={() => {
                 setIsDeletePopup(true);

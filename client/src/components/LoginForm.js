@@ -112,7 +112,9 @@ const LoginForm = () => {
           <button
             disabled={isSubmitting}
             type="submit"
-            className={`btn ${isSubmitting ? 'btn-success' : 'btn-primary'}`}
+            className={`btn ${
+              isSubmitting ? 'btn-success' : 'btn-outline-success'
+            }`}
             style={{ minWidth: '100px' }}
           >
             {isSubmitting ? 'Logging in...' : 'Login'}
@@ -123,7 +125,7 @@ const LoginForm = () => {
         <p>Not a member? Register below</p>
         <Link
           to={'/register'}
-          className="btn btn-secondary mb-3"
+          className="btn btn-outline-secondary mb-3"
           style={{ width: '100px' }}
         >
           Register

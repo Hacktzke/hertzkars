@@ -109,7 +109,7 @@ const RegisterForm = () => {
           )}
           <div className="form-group mb-3">
             <input
-              className={`btn btn-secondary
+              className={`btn btn-outline-secondary
                   ${
                     formikProps.errors.profileImg &&
                     formikProps.touched.profileImg
@@ -149,7 +149,7 @@ const RegisterForm = () => {
           <div className="form-group mb-3">
             <button
               type="button"
-              className="btn btn-secondary d-flex justify-content-center align-items-center mx-auto"
+              className="btn btn-outline-secondary d-flex justify-content-center align-items-center mx-auto"
               onClick={() => {
                 formikProps.setFieldValue('markerColor', randomColor());
               }}
@@ -317,7 +317,7 @@ const RegisterForm = () => {
             disabled={formikProps.isSubmitting}
             type="submit"
             className={`btn ${
-              formikProps.isSubmitting ? 'btn-success' : 'btn-primary'
+              formikProps.isSubmitting ? 'btn-success' : 'btn-outline-success'
             }`}
             style={{ minWidth: '100px' }}
           >

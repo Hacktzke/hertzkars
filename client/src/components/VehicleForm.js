@@ -327,7 +327,7 @@ const VehicleForm = () => {
         </div>
         <div className="mb-3">
           <input
-            className={`btn btn-success w-75
+            className={`btn btn-outline-primary w-75
                   ${
                     formikProps.errors.vehicleImg &&
                     formikProps.touched.vehicleImg
@@ -396,7 +396,7 @@ const VehicleForm = () => {
           disabled={formikProps.isSubmitting}
           type="submit"
           className={`btn ${
-            formikProps.isSubmitting ? 'btn-success' : 'btn-primary'
+            formikProps.isSubmitting ? 'btn-success' : 'btn-outline-success'
           }`}
           style={{ minWidth: '100px' }}
         >
