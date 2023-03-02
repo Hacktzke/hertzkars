@@ -36,6 +36,7 @@ export const VehicleCard = ({ vehicle }) => {
         crossOrigin="anonymous"
         src={vehicle.vehicleImg ? vehicle.vehicleImg.cardImg : noVehicleImg}
         alt={`${vehicle.year} ${vehicle.manufacture} ${vehicle.model}`}
+        style={{ maxHeight: '1500px' }}
       ></img>
       <div className="container">
         <div className="card-body">

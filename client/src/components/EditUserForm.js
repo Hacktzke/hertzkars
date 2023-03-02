@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useMemo } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import userDefaultImg from '../assets/userImg.jpg';
@@ -86,6 +86,22 @@ const EditUserForm = () => {
     onSubmit,
   });
 
+  const getBackgroundImageStyle = (profileImg) => ({
+    backgroundImage: `url(${
+      formikProps.values.profileImg
+        ? formikProps.values.profileImg.url ||
+          URL.createObjectURL(formikProps.values.profileImg)
+        : userDefaultImg
+    })`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  });
+
+  const backgroundImageStyle = useMemo(
+    () => getBackgroundImageStyle(formikProps.values.profileImg),
+    [formikProps.values.profileImg]
+  );
+
   return (
     <div className="position-relative">
       {isDeletePopup && (
@@ -123,36 +139,31 @@ const EditUserForm = () => {
             <hr></hr>
           </div>
           <div>
-            <div className="position-relative">
-              <img
-                className="my-3 "
-                src={
-                  formikProps.values.profileImg
-                    ? formikProps.values.profileImg.url ||
-                      URL.createObjectURL(formikProps.values.profileImg)
-                    : userDefaultImg
-                }
-                crossOrigin="anonymous"
+            <div>
+              <div
+                className="my-3 position-relative"
                 style={{
+                  margin: 'auto',
                   width: '150px',
                   height: '150px',
                   borderRadius: '50%',
                   border: `3px solid ${user.markerColor}`,
+                  ...backgroundImageStyle,
                 }}
-                alt="Profile of the user"
-              ></img>
-              {formikProps.values.profileImg && (
-                <button
-                  className=" btn btn-danger btn-sm position-absolute"
-                  style={{ left: '52%' }}
-                  type="button"
-                  onClick={(e) => {
-                    formikProps.setFieldValue('profileImg', '');
-                  }}
-                >
-                  Remove
-                </button>
-              )}
+              >
+                {formikProps.values.profileImg && (
+                  <button
+                    className=" btn btn-danger btn-sm position-absolute"
+                    style={{ left: '52%' }}
+                    type="button"
+                    onClick={(e) => {
+                      formikProps.setFieldValue('profileImg', '');
+                    }}
+                  >
+                    Remove
+                  </button>
+                )}
+              </div>
             </div>
             <div className="form-group mb-3">
               <input

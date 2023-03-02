@@ -8,7 +8,6 @@ import { ThemeContext } from '../contexts/ThemeContext';
 const UserCard = ({ user }) => {
   const { isDark } = useContext(ThemeContext);
   const { user: loggedInUser } = useContext(AuthContext);
-  // const isProfilePage = user.id === loggedInUser._id ? true : false;
   const isProfilePage =
     loggedInUser && user.id === loggedInUser._id ? true : false;
 

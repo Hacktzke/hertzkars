@@ -9,13 +9,20 @@ const HorsepowerCard = ({ vehicles }) => {
 
   useEffect(() => {
     if (vehicles.length) {
-      const sortedArray = vehicles.sort((a, b) =>
-        a.horsepower < b.horsepower ? 1 : -1
-      );
+      const sortedArray = vehicles.sort((a, b) => {
+        if (!a.horsepower) {
+          return 1; // move vehicle without horsepower property to the end
+        }
+        if (!b.horsepower) {
+          return -1; // move vehicle without horsepower property to the end
+        }
+        return a.horsepower < b.horsepower ? 1 : -1;
+      });
       const topThree = sortedArray.slice(0, 3);
       setHighestRated(topThree[0].horsepower);
 
       setTopThree(topThree);
+      console.log(sortedArray);
     }
   }, [vehicles]);
   if (topThree) {

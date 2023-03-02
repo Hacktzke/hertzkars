@@ -15,7 +15,7 @@ ImageSchema.virtual('thumbnail').get(function () {
 });
 
 ImageSchema.virtual('cardImg').get(function () {
-  return this.url.replace('/upload', '/upload/w_1500/ar_4:3,c_crop,g_center');
+  return this.url.replace('/upload', '/upload/w_1500');
 });
 
 const vehicleSchema = new Schema(
