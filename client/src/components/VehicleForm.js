@@ -297,7 +297,7 @@ const VehicleForm = () => {
             value={formikProps.values.horsepower}
             onChange={formikProps.handleChange}
             onBlur={formikProps.handleBlur}
-            style={{ paddingLeft: '35px' }}
+            style={{ paddingLeft: '25px' }}
           ></input>
           {formikProps.errors.horsepower && formikProps.touched.horsepower && (
             <h6 className="text-danger mt-1">
