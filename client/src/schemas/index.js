@@ -3,8 +3,8 @@ import * as yup from 'yup';
 const passwordRules = /^(?=.*\d)(?=.*[a-zA-Z])[a-zA-Z0-9]{8,}$/;
 const emailRules =
   /^("(?:[!#-\[\]-\u{10FFFF}]|\\[\t -\u{10FFFF}])*"|[!#-'*+\-/-9=?A-Z\^-\u{10FFFF}](?:\.?[!#-'*+\-/-9=?A-Z\^-\u{10FFFF}])*)@([!#-'*+\-/-9=?A-Z\^-\u{10FFFF}](?:\.?[!#-'*+\-/-9=?A-Z\^-\u{10FFFF}])*|\[[!-Z\^-\u{10FFFF}]*\])$/u;
-const letterRegex = /^[A-Za-z\s]+$/;
-const letterNumberRegex = /^[A-Za-z0-9\s]+$/;
+const letterRegex = /^[A-Za-z.\s]+$/;
+const letterNumberRegex = /^[A-Za-z0-9.\s]+$/;
 
 export const registerSchema = yup.object().shape({
   firstName: yup

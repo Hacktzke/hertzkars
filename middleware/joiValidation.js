@@ -4,8 +4,8 @@ export const joiValidateUser = async (req, res, next) => {
   const passwordRules = /^(?=.*\d)(?=.*[a-zA-Z])[a-zA-Z0-9]{8,}$/;
   const emailRules =
     /^("(?:[!#-\[\]-\u{10FFFF}]|\\[\t -\u{10FFFF}])*"|[!#-'*+\-/-9=?A-Z\^-\u{10FFFF}](?:\.?[!#-'*+\-/-9=?A-Z\^-\u{10FFFF}])*)@([!#-'*+\-/-9=?A-Z\^-\u{10FFFF}](?:\.?[!#-'*+\-/-9=?A-Z\^-\u{10FFFF}])*|\[[!-Z\^-\u{10FFFF}]*\])$/u;
-  const letterRegex = /^[A-Za-z\s]+$/;
-  const letterNumberRegex = /^[A-Za-z0-9\s]+$/;
+  const letterRegex = /^[A-Za-z.\s]+$/;
+  const letterNumberRegex = /^[A-Za-z0-9.\s]+$/;
 
   const joiUserSchema = Joi.object({
     firstName: Joi.string().max(25).pattern(letterRegex).required(),
