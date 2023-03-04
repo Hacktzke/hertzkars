@@ -19,7 +19,7 @@ const dbUrl = process.env.DB_URL || 'mongodb://127.0.0.1:27017/hertzcars';
 
 const app = express();
 app.use(cors());
-
+// TEST
 // Configuration: this is only when you use "type":"module" and use import instead of require.
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
