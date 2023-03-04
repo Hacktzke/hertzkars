@@ -220,6 +220,7 @@ const EditVehicleForm = () => {
               value={formikProps.values.year}
               onChange={formikProps.handleChange}
               onBlur={formikProps.handleBlur}
+              style={{ paddingLeft: '35px' }}
             >
               <option hidden>Select Vehicle Year</option>
               {years.map((year, index) => {
@@ -245,6 +246,7 @@ const EditVehicleForm = () => {
               value={formikProps.values.manufacture}
               onChange={formikProps.handleChange}
               onBlur={formikProps.handleBlur}
+              style={{ paddingLeft: '35px' }}
             >
               <option hidden>Select Vehicle Manufacture</option>
               {manufactureNames.sort().map((manufacture, index) => {
@@ -301,6 +303,7 @@ const EditVehicleForm = () => {
               value={formikProps.values.color}
               onChange={formikProps.handleChange}
               onBlur={formikProps.handleBlur}
+              style={{ paddingLeft: '35px' }}
             >
               <option hidden>Select Your Colour</option>
               {colors.map((color, index) => {
@@ -331,6 +334,7 @@ const EditVehicleForm = () => {
               value={formikProps.values.yearPurchased}
               onChange={formikProps.handleChange}
               onBlur={formikProps.handleBlur}
+              style={{ paddingLeft: '35px' }}
             >
               <option hidden>Select the Year</option>
               {years.map((year, index) => {
@@ -357,6 +361,7 @@ const EditVehicleForm = () => {
               value={formikProps.values.horsepower}
               onChange={formikProps.handleChange}
               onBlur={formikProps.handleBlur}
+              style={{ paddingLeft: '35px' }}
             ></input>
             {formikProps.errors.horsepower &&
               formikProps.touched.horsepower && (
