@@ -1,4 +1,4 @@
-import React, { useState, useContext, useMemo } from 'react';
+import React, { useState, useContext, useMemo, useRef } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import userDefaultImg from '../assets/userImg.jpg';
@@ -10,6 +10,7 @@ import ModalCard from './ModalCard';
 
 const EditUserForm = () => {
   const navigate = useNavigate();
+  const markerColorInput = useRef(null);
   const [errorMsg, setErrorMsg] = useState('');
   const [isDeletePopup, setIsDeletePopup] = useState(false);
   const { setIsLoggedIn, user, setUser } = useContext(AuthContext);
@@ -74,6 +75,7 @@ const EditUserForm = () => {
       firstName: user.firstName || '',
       lastName: user.lastName || '',
       profileImg: user.profileImg || '',
+      markerColor: user.markerColor || '',
       favouriteVehicle: user.favouriteVehicle || '',
       bio: user.bio || '',
       email: user.email || '',
@@ -147,7 +149,7 @@ const EditUserForm = () => {
                   width: '150px',
                   height: '150px',
                   borderRadius: '50%',
-                  border: `3px solid ${user.markerColor}`,
+                  border: `3px solid ${formikProps.values.markerColor}`,
                   ...backgroundImageStyle,
                 }}
               >
@@ -167,7 +169,7 @@ const EditUserForm = () => {
             </div>
             <div className="form-group mb-3">
               <input
-                className={`btn btn-secondary
+                className={`btn btn-outline-secondary
                   ${
                     formikProps.errors.profileImg &&
                     formikProps.touched.profileImg
@@ -210,6 +212,30 @@ const EditUserForm = () => {
                   </a>
                 </h6>
               )}
+          </div>
+          <div className="form-group mb-3">
+            <button
+              type="button"
+              className="btn btn-outline-secondary d-flex justify-content-center align-items-center mx-auto"
+              onClick={() => {
+                markerColorInput.current.click();
+              }}
+            >
+              Change Marker Color
+              <input
+                type="color"
+                ref={markerColorInput}
+                value={formikProps.values.markerColor}
+                onBlur={formikProps.handleBlur}
+                onChange={formikProps.handleChange}
+                id="markerColor"
+                style={{
+                  marginLeft: '10px',
+                  width: '30px',
+                  height: '30px',
+                }}
+              ></input>
+            </button>
           </div>
           <div className="form-group mb-3">
             <label className="form-label" htmlFor="firstName">

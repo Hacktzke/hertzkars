@@ -9,8 +9,9 @@ export const formatDateDMY = (fullDate) => {
 };
 
 export const randomColor = () => {
-  let r = Math.floor(Math.random() * 190) + 30;
-  let g = Math.floor(Math.random() * 190) + 30;
-  let b = Math.floor(Math.random() * 190) + 30;
-  return `rgb(${r}, ${g}, ${b})`;
+  let r = Math.floor(Math.random() * 255);
+  let g = Math.floor(Math.random() * 255);
+  let b = Math.floor(Math.random() * 255);
+  // return `rgb(${r}, ${g}, ${b})`;
+  return `#${r.toString(16)}${g.toString(16)}${b.toString(16)}`;
 };

@@ -11,7 +11,7 @@ const ImageSchema = new Schema(
 );
 
 ImageSchema.virtual('thumbnail').get(function () {
-  return this.url.replace('/upload', '/upload/w_500/ar_4:3,c_crop,g_center');
+  return this.url.replace('/upload', '/upload/w_500');
 });
 
 ImageSchema.virtual('cardImg').get(function () {

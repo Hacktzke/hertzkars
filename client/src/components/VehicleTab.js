@@ -37,7 +37,7 @@ const VehicleTab = ({ vehicle }) => {
           <div className="col-md-6 d-flex justify-content-center align-items-center ">
             <Link to={`/vehicles/${vehicle._id}`} className="">
               <img
-                className="card-img mt-3 mt-md-0 my-lg-3 shadow "
+                className="card-img mt-3 mt-md-0 my-lg-3 shadow-lg "
                 src={
                   vehicle.vehicleImg
                     ? vehicle.vehicleImg.thumbnail
@@ -46,6 +46,7 @@ const VehicleTab = ({ vehicle }) => {
                 crossOrigin="anonymous"
                 alt={`${vehicle.year} ${vehicle.manufacture} ${vehicle.model}`}
                 loading="lazy"
+                style={{ maxHeight: '250px' }}
               ></img>
             </Link>
           </div>

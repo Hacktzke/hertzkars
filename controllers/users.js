@@ -56,6 +56,7 @@ export const updateUser = async (req, res) => {
     user.set({
       firstName: formatName(usersNewData.firstName),
       lastName: formatName(usersNewData.lastName),
+      markerColor: usersNewData.markerColor,
       email: usersNewData.email.toLowerCase(),
       favouriteVehicle: usersNewData.favouriteVehicle
         ? usersNewData.favouriteVehicle

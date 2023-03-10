@@ -86,7 +86,6 @@ const VehicleForm = () => {
           vehicle.hqCoordinates = manufacture.hqCoordinates;
         }
       }
-      console.log('HI', vehicle);
 
       await axios.post('/api/vehicles', vehicle, {
         headers: {

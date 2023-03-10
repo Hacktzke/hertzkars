@@ -22,7 +22,6 @@ const HorsepowerCard = ({ vehicles }) => {
       setHighestRated(topThree[0].horsepower);
 
       setTopThree(topThree);
-      console.log(sortedArray);
     }
   }, [vehicles]);
   if (topThree) {

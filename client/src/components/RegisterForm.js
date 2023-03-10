@@ -10,8 +10,8 @@ import axios from 'axios';
 
 const RegisterForm = () => {
   const navigate = useNavigate();
+  const markerColorInput = useRef(null);
   const [errorMsg, setErrorMsg] = useState('');
-  const firstInput = useRef(null);
   const { setIsLoggedIn, setUser, setIntroPopup } = useContext(AuthContext);
   const { themeStyles } = useContext(ThemeContext);
 
@@ -116,7 +116,6 @@ const RegisterForm = () => {
               </button>
             )}
           </div>
-
           <div className="form-group mb-3">
             <input
               className={`btn btn-outline-secondary
@@ -161,20 +160,23 @@ const RegisterForm = () => {
               type="button"
               className="btn btn-outline-secondary d-flex justify-content-center align-items-center mx-auto"
               onClick={() => {
-                formikProps.setFieldValue('markerColor', randomColor());
+                markerColorInput.current.click();
               }}
             >
-              Change Marker Color
-              <span
-                className="card"
+              Choose Marker Color
+              <input
+                type="color"
+                ref={markerColorInput}
+                value={formikProps.values.markerColor}
+                onBlur={formikProps.handleBlur}
+                onChange={formikProps.handleChange}
+                id="markerColor"
                 style={{
                   marginLeft: '10px',
                   width: '30px',
                   height: '30px',
-                  borderRadius: '50%',
-                  backgroundColor: `${formikProps.values.markerColor}`,
                 }}
-              ></span>
+              ></input>
             </button>
           </div>
         </div>
@@ -193,7 +195,6 @@ const RegisterForm = () => {
             onChange={formikProps.handleChange}
             onBlur={formikProps.handleBlur}
             id="firstName"
-            ref={firstInput}
             type="text"
             placeholder="Enter you first name"
             maxLength="25"
@@ -341,3 +342,16 @@ const RegisterForm = () => {
 };
 
 export default RegisterForm;
+
+{
+  /* <span
+                className="card"
+                style={{
+                  marginLeft: '10px',
+                  width: '30px',
+                  height: '30px',
+                  borderRadius: '50%',
+                  backgroundColor: `${formikProps.values.markerColor}`,
+                }}
+              ></span> */
+}

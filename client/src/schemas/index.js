@@ -39,6 +39,7 @@ export const registerSchema = yup.object().shape({
         return true;
       }
     ),
+  markerColor: yup.string().required(),
   favouriteVehicle: yup
     .string()
     .matches(letterNumberRegex, 'Cannot contain symbols')
@@ -102,6 +103,7 @@ export const updateUserSchema = yup.object().shape({
         return true;
       }
     ),
+  markerColor: yup.string().required(),
   favouriteVehicle: yup
     .string()
     .matches(letterNumberRegex, 'Cannot contain symbols')

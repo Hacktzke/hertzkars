@@ -43,7 +43,7 @@ export const joiValidateUserUpdate = (req, res, next) => {
     firstName: Joi.string().max(25).pattern(letterRegex).required(),
     lastName: Joi.string().max(25).pattern(letterRegex).required(),
     profileImg: Joi.object().allow(''),
-    // profileImg: Joi.string().object().allow(''),
+    markerColor: Joi.string().required(),
     favouriteVehicle: Joi.string().max(50).pattern(letterNumberRegex),
     bio: Joi.string().max(400),
     email: Joi.string().max(70).pattern(new RegExp(emailRules)).required(),
