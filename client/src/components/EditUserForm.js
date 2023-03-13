@@ -75,7 +75,7 @@ const EditUserForm = () => {
       firstName: user.firstName || '',
       lastName: user.lastName || '',
       profileImg: user.profileImg || '',
-      markerColor: user.markerColor || '',
+      markerColor: user.markerColor || '#FFFFFF',
       favouriteVehicle: user.favouriteVehicle || '',
       bio: user.bio || '',
       email: user.email || '',
