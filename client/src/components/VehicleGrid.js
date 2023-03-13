@@ -10,7 +10,7 @@ const VehicleGrid = ({ vehicles, owner }) => {
   const { user } = useContext(AuthContext);
   const [vehicleArray, setVehicleArray] = useState(vehicles);
   const [searchVal, setSearchVal] = useState('');
-  const [sortVal, setSortVal] = useState('');
+  const [sortVal, setSortVal] = useState('desc createdAt');
   const isProfilePage = user && owner && user.id === owner._id ? true : false;
 
   const sortVehicles = () => {
@@ -18,14 +18,22 @@ const VehicleGrid = ({ vehicles, owner }) => {
       const selectValues = sortVal.split(' ');
       const array = [...vehicleArray];
       if (selectValues[0] === 'asce') {
-        const sortedArray = array.sort((a, b) =>
-          a[selectValues[1]] > b[selectValues[1]] ? 1 : -1
-        );
+        const sortedArray = array.sort((a, b) => {
+          if (!a[selectValues[1]]) {
+            return -1;
+          } else if (!b[selectValues[1]]) {
+            return 1;
+          }
+          return a[selectValues[1]] > b[selectValues[1]] ? 1 : -1;
+        });
         setVehicleArray(sortedArray);
       } else {
-        const sortedArray = array.sort((a, b) =>
-          a[selectValues[1]] < b[selectValues[1]] ? 1 : -1
-        );
+        const sortedArray = array.sort((a, b) => {
+          if (!a[selectValues[1]]) {
+            return 1;
+          }
+          return a[selectValues[1]] < b[selectValues[1]] ? 1 : -1;
+        });
         setVehicleArray(sortedArray);
       }
     }
@@ -140,10 +148,6 @@ const VehicleGrid = ({ vehicles, owner }) => {
           })
         ) : (
           <div className="my-5 text-center">
-            {/* <h3>
-              Sorry, we can't retrieve the vehicles for you.<br></br>Try again
-              later...
-            </h3> */}
             <img src={loadingGif}></img>
           </div>
         )}

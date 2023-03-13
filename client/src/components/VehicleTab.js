@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthContext';
 import { ThemeContext } from '../contexts/ThemeContext';
@@ -26,6 +26,10 @@ const VehicleTab = ({ vehicle }) => {
       backgroundColor: `${vehicle.owner.markerColor}`,
     });
   };
+
+  useEffect(() => {
+    setUserBtnStyle(initialUserBtnStyle);
+  }, [vehicle]);
 
   return (
     <div
