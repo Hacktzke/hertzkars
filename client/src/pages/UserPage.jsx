@@ -10,6 +10,7 @@ import ModalCard from '../components/ModalCard';
 import Welcome from '../components/Welcome';
 import loadingGif from '../assets/loading.gif';
 import DataErrorCard from '../components/DataErrorCard';
+import garageImg from '../assets/garage.jpg';
 
 const UserPage = () => {
   const location = useLocation();
@@ -44,11 +45,7 @@ const UserPage = () => {
   });
 
   return (
-    <ContentPageTemplate
-      bgImgUrl={
-        'https://images.unsplash.com/photo-1551522435-a13afa10f103?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80'
-      }
-    >
+    <ContentPageTemplate bgImgUrl={garageImg}>
       {loading ? (
         <div className="d-flex justify-content-center vh-75 align-items-center">
           <img width="80px" src={loadingGif}></img>

@@ -5,6 +5,7 @@ import axios from 'axios';
 import ContentPageTemplate from '../components/ContentPageTemplate';
 import DataErrorCard from '../components/DataErrorCard';
 import loadingGif from '../assets/loading.gif';
+import racetrack2 from '../assets/racetrack2.jpg';
 
 const VehiclePage = () => {
   const [vehicle, setVehicle] = useState(null);
@@ -27,11 +28,7 @@ const VehiclePage = () => {
   }, []);
 
   return (
-    <ContentPageTemplate
-      bgImgUrl={
-        'https://images.unsplash.com/photo-1542242476-5a3565835a38?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80'
-      }
-    >
+    <ContentPageTemplate bgImgUrl={racetrack2}>
       {loading ? (
         <div className="d-flex justify-content-center vh-75 align-items-center">
           <img width="80px" src={loadingGif}></img>

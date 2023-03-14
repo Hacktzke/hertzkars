@@ -4,6 +4,7 @@ import VehicleGrid from '../components/VehicleGrid';
 import ContentPageTemplate from '../components/ContentPageTemplate';
 import loadingGif from '../assets/loading.gif';
 import DataErrorCard from '../components/DataErrorCard';
+import racetrackImg from '../assets/racetrack.jpg';
 
 const AllVehiclesPage = () => {
   const [vehicles, setVehicles] = useState(null);
@@ -25,11 +26,7 @@ const AllVehiclesPage = () => {
   }, []);
 
   return (
-    <ContentPageTemplate
-      bgImgUrl={
-        'https://images.unsplash.com/photo-1617368020611-7515cc43c639?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80'
-      }
-    >
+    <ContentPageTemplate bgImgUrl={racetrackImg}>
       {loading ? (
         <div className="d-flex justify-content-center vh-75 align-items-center">
           <img width="80px" alt="loading spinner" src={loadingGif}></img>
