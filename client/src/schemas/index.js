@@ -21,10 +21,10 @@ export const registerSchema = yup.object().shape({
     .mixed()
     .test(
       'FILE_SIZE',
-      'The image size is too big! Image must be less than 2MB',
+      'The image size is too big! Image must be less than 3MB',
       (value) => {
         if (value) {
-          return value.size < 2000000;
+          return value.size < 3000000;
         }
         return true;
       }
@@ -79,11 +79,11 @@ export const updateUserSchema = yup.object().shape({
     .mixed()
     .test(
       'FILE_SIZE',
-      'The image size is too big! Image must be less than 2MB.',
+      'The image size is too big! Image must be less than 3MB.',
       (value) => {
         if (value) {
           if (value.size) {
-            return value.size < 2000000;
+            return value.size < 3000000;
           }
         }
         return true;
@@ -172,11 +172,11 @@ export const vehicleSchema = yup.object().shape({
     .mixed()
     .test(
       'FILE_SIZE',
-      'The image size is too big! Image must be less than 3MB',
+      'The image size is too big! Image must be less than 5MB',
       (value) => {
         if (value) {
           if (value.size) {
-            return value.size < 3000000;
+            return value.size < 5000000;
           }
         }
         return true;
