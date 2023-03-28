@@ -97,6 +97,7 @@ const EditUserForm = () => {
     })`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
+    crossOrigin: 'anonymous',
   });
 
   const backgroundImageStyle = useMemo(

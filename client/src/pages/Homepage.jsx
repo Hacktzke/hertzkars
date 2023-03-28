@@ -197,7 +197,6 @@ const Homepage = () => {
                   <img
                     src={isDark ? whiteMarker : blackMarker}
                     alt="Marker of a vehicle"
-                    // width={`22px`}
                   />
                 </div>
               </Marker>

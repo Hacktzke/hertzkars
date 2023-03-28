@@ -48,7 +48,11 @@ const UserPage = () => {
     <ContentPageTemplate bgImgUrl={garageImg}>
       {loading ? (
         <div className="d-flex justify-content-center vh-75 align-items-center">
-          <img width="80px" src={loadingGif}></img>
+          <img
+            width="80px"
+            src={loadingGif}
+            alt="loading symbol rotating"
+          ></img>
         </div>
       ) : error ? (
         <div className="container">

@@ -29,7 +29,6 @@ mongoose.set('strictQuery', false);
 if (process.env.NODE_ENV === 'development') {
   dotenv.config({ path: path.join(__dirname, '.env') });
 }
-// TEST
 main().catch((err) => console.log(err));
 
 async function main() {
@@ -55,13 +54,6 @@ app.use('/api/vehicles', vehicleRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/manufactures', manufactureRoutes);
-
-// Request below deals with cors issue for Manufacture logos
-// const proxy = createProxyMiddleware({
-//   target: 'https://www.car-logos.org',
-//   changeOrigin: true,
-// });
-// app.use('/wp-content', proxy);
 
 const logoProxy = createProxyMiddleware({
   target: 'https://www.carlogos.org',
