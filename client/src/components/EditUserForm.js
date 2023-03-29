@@ -97,16 +97,12 @@ const EditUserForm = () => {
     })`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    crossOrigin: 'anonymous',
   });
 
   const backgroundImageStyle = useMemo(
     () => getBackgroundImageStyle(formikProps.values.profileImg),
     [formikProps.values.profileImg]
   );
-
-  // console.log(user.profileImg);
-  console.log(formikProps.values);
 
   return (
     <div className="position-relative">
@@ -145,37 +141,44 @@ const EditUserForm = () => {
             <hr></hr>
           </div>
           <div>
-            <div>
-              <div
-                className="my-3 position-relative"
-                style={{
-                  margin: 'auto',
-                  width: '150px',
-                  height: '150px',
-                  borderRadius: '50%',
-                  border: `3px solid ${formikProps.values.markerColor}`,
-                  ...backgroundImageStyle,
-                }}
-              >
+            <div className="my-3 position-relative">
+              {formikProps.values.profileImg.thumbnail ? (
                 <img
                   src={formikProps.values.profileImg.thumbnail}
-                  style={{ marginTop: '100px' }}
+                  style={{
+                    margin: 'auto',
+                    width: '150px',
+                    height: '150px',
+                    borderRadius: '50%',
+                    border: `3px solid ${formikProps.values.markerColor}`,
+                  }}
                   crossOrigin="anonymous"
                   alt="Profile"
                 ></img>
-                {formikProps.values.profileImg && (
-                  <button
-                    className=" btn btn-danger btn-sm position-absolute"
-                    style={{ left: '52%' }}
-                    type="button"
-                    onClick={(e) => {
-                      formikProps.setFieldValue('profileImg', '');
-                    }}
-                  >
-                    Remove
-                  </button>
-                )}
-              </div>
+              ) : (
+                <div
+                  style={{
+                    margin: 'auto',
+                    width: '150px',
+                    height: '150px',
+                    borderRadius: '50%',
+                    border: `3px solid ${formikProps.values.markerColor}`,
+                    ...backgroundImageStyle,
+                  }}
+                ></div>
+              )}
+              {formikProps.values.profileImg && (
+                <button
+                  className=" btn btn-danger btn-sm position-absolute"
+                  style={{ left: '52%', top: '0px' }}
+                  type="button"
+                  onClick={(e) => {
+                    formikProps.setFieldValue('profileImg', '');
+                  }}
+                >
+                  Remove
+                </button>
+              )}
             </div>
             <div className="form-group mb-3">
               <input
