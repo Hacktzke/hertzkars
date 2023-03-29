@@ -4,12 +4,28 @@ import userImg from '../assets/userImg.jpg';
 import { formatDateDMY } from '../helpers/helpers';
 import { AuthContext } from '../contexts/AuthContext';
 import { ThemeContext } from '../contexts/ThemeContext';
+import styled from 'styled-components';
 
 const UserCard = ({ user }) => {
   const { isDark } = useContext(ThemeContext);
   const { user: loggedInUser } = useContext(AuthContext);
   const isProfilePage =
     loggedInUser && user.id === loggedInUser._id ? true : false;
+
+  const CircleMarker = styled.div`
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-left: 5px;
+    background-color: ${user.markerColor};
+  `;
+
+  const ProfileImg = styled.img.attrs({})`
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid ${user.markerColor};
+  `;
 
   return (
     <div
@@ -20,7 +36,7 @@ const UserCard = ({ user }) => {
       <div className="card-body text-center text-md-start">
         <div className="row mb-3 ">
           <div className="d-flex flex-column flex-md-row align-items-center ">
-            <img
+            {/* <img
               src={user.profileImg ? user.profileImg.thumbnail : userImg}
               className="rounded-cicle"
               crossOrigin="anonymous"
@@ -31,7 +47,12 @@ const UserCard = ({ user }) => {
                 border: `4px solid ${user.markerColor}`,
               }}
               alt="profile thumbnail of the user"
-            ></img>
+            ></img> */}
+            <ProfileImg
+              src={user.profileImg ? user.profileImg.thumbnail : userImg}
+              crossOrigin="anonymous"
+              alt="profile thumbnail of the user"
+            />
             <div className="mt-3 mt-md-0 ms-md-3">
               <h5 className="card-title ">{user.fullName}</h5>
               <h6 className="card-subtitle mb-2 text-muted">
@@ -39,7 +60,7 @@ const UserCard = ({ user }) => {
               </h6>
               <h6 className="card-subtitle mb-2 text-muted d-flex align-items-center">
                 {isProfilePage ? 'Your' : `${user.firstName}'s`} Marker Colour:{' '}
-                <div
+                {/* <div
                   style={{
                     width: '15px',
                     height: '15px',
@@ -47,7 +68,8 @@ const UserCard = ({ user }) => {
                     marginLeft: '5px',
                     backgroundColor: `${user.markerColor}`,
                   }}
-                ></div>
+                ></div> */}
+                <CircleMarker />
               </h6>
               <h6 className="card-subtitle mb-2 text-muted">
                 Vehicles Submitted: {user.vehicles.length}
