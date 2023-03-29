@@ -160,6 +160,8 @@ const EditUserForm = () => {
                 <img
                   src={formikProps.values.profileImg.thumbnail}
                   style={{ marginTop: '100px' }}
+                  crossOrigin="anonymous"
+                  alt="Profile"
                 ></img>
                 {formikProps.values.profileImg && (
                   <button
