@@ -91,7 +91,7 @@ const EditUserForm = () => {
   const getBackgroundImageStyle = (profileImg) => ({
     backgroundImage: `url(${
       formikProps.values.profileImg
-        ? formikProps.values.profileImg.url ||
+        ? formikProps.values.profileImg.thumbnail ||
           URL.createObjectURL(formikProps.values.profileImg)
         : userDefaultImg
     })`,
@@ -104,6 +104,9 @@ const EditUserForm = () => {
     () => getBackgroundImageStyle(formikProps.values.profileImg),
     [formikProps.values.profileImg]
   );
+
+  // console.log(user.profileImg);
+  console.log(formikProps.values);
 
   return (
     <div className="position-relative">
@@ -154,6 +157,10 @@ const EditUserForm = () => {
                   ...backgroundImageStyle,
                 }}
               >
+                <img
+                  src={formikProps.values.profileImg.thumbnail}
+                  style={{ marginTop: '100px' }}
+                ></img>
                 {formikProps.values.profileImg && (
                   <button
                     className=" btn btn-danger btn-sm position-absolute"

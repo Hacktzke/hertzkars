@@ -7,9 +7,11 @@ import {
   joiValidateUser,
   joiValidateLogin,
 } from '../middleware/joiValidation.js';
+
 const upload = multer({ storage });
 
 router.get('/', authenticate);
+
 router.post(
   '/register',
   upload.single('profileImg'),

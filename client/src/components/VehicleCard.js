@@ -44,7 +44,6 @@ export const VehicleCard = ({ vehicle }) => {
             <div>
               <img
                 className="me-3"
-                // src={`${vehicle.logo.split('org')[1]}` || noLogoImg}
                 src={`/car-logos/${vehicle.urlName}-logo.png`}
                 crossOrigin="anonymous"
                 onError={(e) => {
