@@ -1,6 +1,7 @@
 import jwt from 'jsonwebtoken';
 import Vehicle from '../models/Vehicle.js';
 
+// MIDDLEWARE FOR CHECKING CORRECT USER IS LOGGED IN
 export const verifyToken = async (req, res, next) => {
   try {
     let token = req.cookies.token;
@@ -18,6 +19,7 @@ export const verifyToken = async (req, res, next) => {
   }
 };
 
+// MIDDLEWARE FOR CHECKING IF LOGGED IN USER IS THE OWNER OF THE VEHICLE VIEWED
 export const isOwner = async (req, res, next) => {
   try {
     const { id } = req.params;

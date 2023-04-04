@@ -16,7 +16,6 @@ router.put(
   updateUser
 );
 router.get('/:id', getUser);
-router.get('/edit/:id', (req, res) => {});
 router.delete('/:id', verifyToken, deleteUser);
 
 export default router;

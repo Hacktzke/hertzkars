@@ -12,6 +12,6 @@ export const randomColor = () => {
   let r = Math.floor(Math.random() * 255);
   let g = Math.floor(Math.random() * 255);
   let b = Math.floor(Math.random() * 255);
-  // BELOW RETURNS HEX VALUE.
+  // BELOW RETURNS HEX VALUE
   return `#${r.toString(16)}${g.toString(16)}${b.toString(16)}`;
 };

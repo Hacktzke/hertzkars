@@ -1,5 +1,7 @@
 import Joi from 'joi';
 
+// ALL VALIDATION FOR FORMIK FORNT-END BELOW.
+
 export const joiValidateUser = async (req, res, next) => {
   const passwordRules = /^(?=.*\d)(?=.*[a-zA-Z])[a-zA-Z0-9]{8,}$/;
   const emailRules =

@@ -1,6 +1,8 @@
 import cloudinaryModule from 'cloudinary';
 import 'dotenv/config';
 import { CloudinaryStorage } from 'multer-storage-cloudinary';
+
+// CONFIURATION FOR CLOUDINARY IMAGE STORAGE
 const cloudinary = cloudinaryModule.v2;
 
 cloudinary.config({
