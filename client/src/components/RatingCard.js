@@ -26,7 +26,6 @@ const RatingCard = ({ vehicles }) => {
           }
         });
       });
-
       setTopThree(topThree);
     }
   }, [vehicles]);

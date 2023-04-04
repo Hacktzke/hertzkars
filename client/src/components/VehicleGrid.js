@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ThemeContext } from '../contexts/ThemeContext';
 import { AuthContext } from '../contexts/AuthContext';
 import loadingGif from '../assets/loading.gif';
+
 const VehicleTab = lazy(() => import('./VehicleTab'));
 
 const VehicleGrid = ({ vehicles, owner }) => {
@@ -148,7 +149,7 @@ const VehicleGrid = ({ vehicles, owner }) => {
           })
         ) : (
           <div className="my-5 text-center">
-            <img src={loadingGif}></img>
+            <img src={loadingGif} alt="loading symbol spinning"></img>
           </div>
         )}
         {searchVal && !vehicleArray.length && (

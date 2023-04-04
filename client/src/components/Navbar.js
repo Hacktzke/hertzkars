@@ -4,7 +4,6 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthContext';
 import { ThemeContext } from '../contexts/ThemeContext';
-import styled from 'styled-components';
 
 const Navbar = () => {
   const location = useLocation();
@@ -74,7 +73,6 @@ const Navbar = () => {
               }}
             ></ion-icon>
           </div>
-
           <button
             className="navbar-toggler me-2"
             type="button"

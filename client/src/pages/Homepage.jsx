@@ -11,6 +11,26 @@ import { ThemeContext } from '../contexts/ThemeContext';
 import NoVehiclesModal from '../components/NoVehiclesModal';
 import RatingCard from '../components/RatingCard';
 import HorsepowerCard from '../components/HorsepowerCard';
+import styled from 'styled-components';
+
+const ColoredCircle = styled.div`
+  background-color: ${(props) => props.color};
+  width: 8px;
+  height: 8px;
+  border: 1px solid black;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  margin: 2px auto;
+`;
+
+const CardArea = styled.div.attrs({
+  className: 'd-none d-md-block',
+})`
+  position: absolute;
+  bottom: 50px;
+  ${(props) => props.position}: 50px;
+  z-index: 50;
+`;
 
 const Homepage = () => {
   const token = process.env.REACT_APP_MAPBOX_TOKEN;
@@ -104,28 +124,12 @@ const Homepage = () => {
           noVehiclesPopupText={noVehiclesPopupText}
         ></NoVehiclesModal>
       )}
-      <div
-        className="d-none d-md-block"
-        style={{
-          position: 'absolute',
-          bottom: '50px',
-          left: '50px',
-          zIndex: '50',
-        }}
-      >
+      <CardArea position="left">
         <RatingCard vehicles={vehicles}></RatingCard>
-      </div>
-      <div
-        className="d-none d-md-block"
-        style={{
-          position: 'absolute',
-          bottom: '50px',
-          right: '50px',
-          zIndex: '50',
-        }}
-      >
+      </CardArea>
+      <CardArea position="right">
         <HorsepowerCard vehicles={vehicles}></HorsepowerCard>
-      </div>
+      </CardArea>
       <Map
         initialViewState={{
           longitude: 68,
@@ -179,20 +183,7 @@ const Homepage = () => {
               >
                 <div>
                   {markerColorsInCluster.map((color, index) => {
-                    return (
-                      <div
-                        key={index}
-                        style={{
-                          backgroundColor: `${color}`,
-                          width: '8px',
-                          height: '8px',
-                          border: '1px solid black',
-                          borderRadius: '50%',
-                          marginBottom: '10px',
-                          margin: '2px auto',
-                        }}
-                      ></div>
-                    );
+                    return <ColoredCircle key={index} color={color} />;
                   })}
                   <img
                     src={isDark ? whiteMarker : blackMarker}

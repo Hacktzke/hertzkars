@@ -435,7 +435,6 @@ const EditUserForm = () => {
               Cancel
             </Link>
           </div>
-
           <div>
             <button
               disabled={formikProps.isSubmitting}

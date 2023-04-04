@@ -11,6 +11,7 @@ const AuthContextProvider = ({ children }) => {
     setIsLoggedIn(bool);
   };
 
+  // FUNCTION BELOW CHECKS FOR USER ON REFRESH
   const checkLoggedIn = async () => {
     if (isLoggedIn === null) {
       try {

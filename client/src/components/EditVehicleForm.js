@@ -463,7 +463,6 @@ const EditVehicleForm = () => {
               </div>
             )}
           </div>
-
           <div>
             <Link
               to={`/vehicles/${vehicle._id}`}
@@ -473,7 +472,6 @@ const EditVehicleForm = () => {
               Cancel
             </Link>
           </div>
-
           <button
             disabled={formikProps.isSubmitting}
             type="submit"

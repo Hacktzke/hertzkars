@@ -29,7 +29,11 @@ const AllVehiclesPage = () => {
     <ContentPageTemplate bgImgUrl={racetrackImg}>
       {loading ? (
         <div className="d-flex justify-content-center vh-75 align-items-center">
-          <img width="80px" alt="loading spinner" src={loadingGif}></img>
+          <img
+            width="80px"
+            alt="loading symbol spinning"
+            src={loadingGif}
+          ></img>
         </div>
       ) : error ? (
         <div className="container">

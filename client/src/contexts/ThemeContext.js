@@ -12,6 +12,7 @@ const ThemeContextProvider = ({ children }) => {
   const toggleTheme = () => {
     setIsDark(!isDark);
   };
+
   return (
     <div>
       <ThemeContext.Provider value={{ isDark, toggleTheme, themeStyles }}>
