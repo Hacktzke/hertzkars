@@ -1,5 +1,4 @@
 import express from 'express';
-import bcrypt, { genSalt } from 'bcrypt';
 import { getUser, updateUser, deleteUser } from '../controllers/users.js';
 import { verifyToken } from '../middleware/auth.js';
 const router = express.Router();
