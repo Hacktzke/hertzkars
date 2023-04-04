@@ -92,7 +92,7 @@ const UserCard = ({ user }) => {
         {loggedInUser && user._id === loggedInUser._id && (
           <Link
             to={`/users/${user._id}/edit`}
-            className="btn btn-outline-secondary me-3"
+            className="btn btn-outline-secondary"
           >
             Edit Profile
           </Link>

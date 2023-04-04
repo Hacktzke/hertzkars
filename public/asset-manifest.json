@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.8c495295.css",
-    "main.js": "/static/js/main.bdd9380f.js",
+    "main.js": "/static/js/main.d4986e11.js",
     "static/js/404.79af66fc.chunk.js": "/static/js/404.79af66fc.chunk.js",
     "static/media/burnout.jpg": "/static/media/burnout.5cf898135d5740cca7db.jpg",
     "static/media/porsche.jpg": "/static/media/porsche.8d615fabcf77bc74dd31.jpg",
@@ -18,11 +18,11 @@
     "static/media/whiteMarker.svg": "/static/media/whiteMarker.1aa59363b74da91dda6007acb5ec7918.svg",
     "index.html": "/index.html",
     "main.8c495295.css.map": "/static/css/main.8c495295.css.map",
-    "main.bdd9380f.js.map": "/static/js/main.bdd9380f.js.map",
+    "main.d4986e11.js.map": "/static/js/main.d4986e11.js.map",
     "404.79af66fc.chunk.js.map": "/static/js/404.79af66fc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8c495295.css",
-    "static/js/main.bdd9380f.js"
+    "static/js/main.d4986e11.js"
   ]
 }

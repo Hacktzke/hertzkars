@@ -2,6 +2,7 @@ import React from 'react';
 import Footer from '../components/Footer.js';
 import styled from 'styled-components';
 
+// THIS COMPONENT WRAPS ALL THE PAGES EXCEPT THE HOMEPAGE
 const ContentPageTemplate = ({ bgImgUrl, children }) => {
   const Wrapper = styled.div`
     position: relative;

@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthContext';
 import { ThemeContext } from '../contexts/ThemeContext';
+import styled from 'styled-components';
 
 const Navbar = () => {
   const location = useLocation();

@@ -60,7 +60,6 @@ const VehicleTab = ({ vehicle }) => {
                 <div className="me-3 ">
                   <img
                     className="my-3 my-md-0"
-                    // src={vehicle.logo.split('wp-content')[1]}
                     src={`/car-logos/${vehicle.urlName}-logo.png`}
                     onError={(e) => {
                       e.target.onerror = null;

@@ -342,16 +342,3 @@ const RegisterForm = () => {
 };
 
 export default RegisterForm;
-
-{
-  /* <span
-                className="card"
-                style={{
-                  marginLeft: '10px',
-                  width: '30px',
-                  height: '30px',
-                  borderRadius: '50%',
-                  backgroundColor: `${formikProps.values.markerColor}`,
-                }}
-              ></span> */
-}
